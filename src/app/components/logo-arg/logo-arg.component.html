@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/argprog.png" alt="logo argentina programa" />
+    </a>
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item"><i class="fa-brands fa-github fa-2xl"></i></li>
+        <li class="list-group-item"><i class="fa-brands fa-instagram fa-2xl" ></i></li>
+        <li class="list-group-item"><i class="fa-brands fa-linkedin fa-2xl"></i></li>
+        <!-- Button trigger modal-->
+        <li class="list-group-item">                
+          <i class="fa-solid fa-user fa-2xl" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>  
+        </li>
+    </ul>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">LOGIN</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Email </label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputEmail" value="email@dominio.com">
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña </label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword">
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary">INGRESAR</button>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+</nav>

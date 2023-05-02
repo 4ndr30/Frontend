@@ -1,0 +1,13 @@
+.row {
+  font-family: 'Comfortaa', cursive;
+  font-weight: bold;
+  color: white;
+  background: rgb(20,20,20);
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+#info {
+    text-align: center;
+}

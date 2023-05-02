@@ -1,0 +1,20 @@
+i.fa-brands.fa-instagram.fa-2xl:hover{
+    color: red;
+}
+i.fa-brands.fa-instagram.fa-2xl,i.fa-solid.fa-user.fa-2xl, i.fa-solid.fa-user-pen.fa-2xl, i.fa-brands.fa-github.fa-2xl{
+    color: rgb(95, 92, 92);
+}
+i.fa-brands.fa-linkedin.fa-2xl:hover{
+    color: rgb(0, 95, 248);
+}
+i.fa-brands.fa-linkedin.fa-2xl{
+    color: rgb(95, 92, 92);
+}
+i.fa-solid.fa-user.fa-2xl:hover, i.fa-solid.fa-user-pen.fa-2xl:hover, i.fa-brands.fa-github.fa-2xl:hover{
+    color: rgb(255, 255, 255);
+}
+
+.list-group-item{
+    background-color: transparent;
+    border: transparent;
+}
