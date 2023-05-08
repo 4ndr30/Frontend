@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LogoARGComponent } from './components/logo-arg/logo-arg.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { AboutMEComponent } from './components/about-me/about-me.component';
+import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { SkillsComponent } from './components/skills/skills.component';
@@ -14,18 +14,25 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { FooterComponent } from './components/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LogoARGComponent,
     BannerComponent,
-    AboutMEComponent,
+    AboutMeComponent,
     ExperienciaComponent,
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,3 +46,11 @@ import {HttpClientModule} from '@angular/common/http';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+@Injectable()
+export class DataService {
+  constructor(private http: HttpClient) {}
+
+  getPersonas() {
+    return this.http.get('/api/personas/traer');
+  }
+}

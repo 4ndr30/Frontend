@@ -6,7 +6,7 @@ import { PersonaService } from 'src/app/service/persona.service';
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.css']
 })
-export class AboutMEComponent implements OnInit {
+export class AboutMeComponent implements OnInit {
   persona: persona = new persona("","","");
   constructor(public personaService: PersonaService) { }
 
