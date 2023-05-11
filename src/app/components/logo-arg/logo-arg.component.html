@@ -7,9 +7,13 @@
         <li class="list-group-item"><i class="fa-brands fa-github fa-2xl"></i></li>
         <li class="list-group-item"><i class="fa-brands fa-instagram fa-2xl" ></i></li>
         <li class="list-group-item"><i class="fa-brands fa-linkedin fa-2xl"></i></li>
-        <li class="list-group-item">                
-          <i class="fa-solid fa-user fa-2xl" type="button" (click)="login()"></i>  
+        <li class="list-group-item">
+          <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Ingresar</button> 
+          <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Salir</button>               
+          
+            
         </li>
     </ul>
+  
   </div>
 </nav>

@@ -1,43 +1,24 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-3 mb-3" id="info">
-    <h1>Educacion</h1>
-  </div>
-</div>
-  <div class="row">
-      <div class="col-4 text-center"><h5>ARGENTINA PROGRAMA</h5></div>
-      <div class="col-2"><h6>2022 - 2023</h6></div>
-      <div class="col-6"><h6>DESARROLLADOR FULL STACK</h6></div>
-  </div>
-  <div class="row">
-      <div class="col-4 text-center"><h5>IPAP</h5></div>
-      <div class="col-2"><h6>2021 - 2024</h6></div>
-      <div class="col-6"><h6>TECNICATURA EN GESTION DE RECURSOS HUMANOS</h6></div>
-  </div>
-  <div class="row">
-      <div class="col-4 text-center"><h5>CEM 20</h5></div>
-      <div class="col-2"><h6>2002 - 2006</h6></div>
-      <div class="col-6"><h6>BACHILLER EN COMUNICACION SOCIAL</h6></div>
-
-  <h3 class="text-center mt-3">Cursos</h3>
-            <div class="row text-center">
-                <div class="col-3"><h6>DISEÑO UX/UI</h6></div>
-                <div class="col-3"><h6>2023</h6></div>
-                <div class="col-6"><h6>PLATZI</h6></div>
-            </div>
-            <div class="row text-center">
-                <div class="col-3"><h6>DESARROLLO RESPONISVE</h6></div>
-                <div class="col-3"><h6>2022</h6></div>
-                <div class="col-6"><h6>FREECODECAMP</h6></div>
-            </div>
-            <div class="row text-center">
-                <div class="col-3"><h6>RECLUTAMIENTO IT</h6></div>
-                <div class="col-3"><h6>2022</h6></div>
-                <div class="col-6"><h6>EDUCACION IT</h6></div>
-            </div>
-            <div class="row text-center">
-                <div class="col-3"><h6>BUSQUEDA Y SELECCION DE PERSONAL</h6></div>
-                <div class="col-3"><h6>2022</h6></div>
-                <div class="col-6"><h6>CAPACITARTE</h6></div>
-            </div>
-          </div>            
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 " id="info">
+      <h1>Educacion</h1>
+      <div>
+        <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged"> Nueva Educacion</button>
+      </div>
+    </div>
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let Educacion of educacion">
+          <td> {{Educacion.nombreE}}</td>
+          <td> {{Educacion.descripcionE}}</td>
+          
+          <td *ngIf="isLogged">
+            <button type="button" class="btn btn-sucess" routerLink="/editedu/{{Educacion.id}}"><i class="bi bi-pen"></i>Editar</button>
+          </td>
+            
+          <td *ngIf="isLogged">
+            <button type="button" class="btn btn-danger" (click)="delete(Educacion.id)"><i class="bi bi-eraser"></i>Borrar</button>
+          </td>
   
+        </tr>
+      </tbody>
+    </table>
