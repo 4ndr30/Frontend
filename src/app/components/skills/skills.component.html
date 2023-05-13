@@ -1,11 +1,12 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-3 mb-3" id="info">
+  <div class="col-lg-2"><button type="button" routerLink="/newskill" class="btn btn-light" *ngIf="isLogged"> Agregar Skill</button></div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-3 mb-3">
     <h1>Skills</h1>
     <br>
   </div>
-  <div class="text-center col-sm-4 col-md-4 col-lg-4">
+  <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor = "let skill of skill">
     <circle-progress
-    [percent]="95"
+    [percent]="(skill.porcentaje)"
     [radius]="100"
     [outerStrokeWidth]="10"
     [innerStrokeWidth]="5"
@@ -13,7 +14,8 @@
     [innerStrokeColor]="'#A7EEFB'"
     [animation]="true"
     [animationDuration]="200"
-    [title]="'HTML'"
+    [title]="(skill.nombre)"
+    [showTitle]="true"
     [titleFontSize]="'2em'"
     [titleFontWeight]="'2px'"
     [showUnits]="false"
@@ -21,101 +23,14 @@
     [outerStrokeGradient]="true"
     [outerStrokeGradientStopColor]="'#1378FA'"
 ></circle-progress>
-  </div>
-  <div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="85"
-    [radius]="100"
-    [outerStrokeWidth]="10"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#03C6E9'"
-    [innerStrokeColor]="'#A7EEFB'"
-    [animation]="true"
-    [animationDuration]="400"
-    [title]="'CSS'"
-    [titleFontSize]="'2em'"
-    [titleFontWeight]="'2px'"
-    [showUnits]="false"
-    [showSubtitle]="false"
-    [outerStrokeGradient]="true"
-    [outerStrokeGradientStopColor]="'#1378FA'"
-></circle-progress>
-  </div>
-  <div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="75"
-    [radius]="100"
-    [outerStrokeWidth]="10"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#03C6E9'"
-    [innerStrokeColor]="'#A7EEFB'"
-    [animation]="true"
-    [animationDuration]="600"
-    [title]="'JS'"
-    [titleFontSize]="'2em'"
-    [titleFontWeight]="'2px'"
-    [showUnits]="false"
-    [showSubtitle]="false"
-    [outerStrokeGradient]="true"
-    [outerStrokeGradientStopColor]="'#1378FA'"
-></circle-progress>
-  </div>
-  <div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="75"
-    [radius]="100"
-    [outerStrokeWidth]="10"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#03C6E9'"
-    [innerStrokeColor]="'#A7EEFB'"
-    [animation]="true"
-    [animationDuration]="800"
-    [title]="'ANGULAR'"
-    [titleFontSize]="'2em'"
-    [titleFontWeight]="'2px'"
-    [showUnits]="false"
-    [showSubtitle]="false"
-    [outerStrokeGradient]="true"
-    [outerStrokeGradientStopColor]="'#1378FA'"
-></circle-progress>
-  </div>
-  <div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="75"
-    [radius]="100"
-    [outerStrokeWidth]="10"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#03C6E9'"
-    [innerStrokeColor]="'#A7EEFB'"
-    [animation]="true"
-    [animationDuration]="1000"
-    [title]="'MY SQL'"
-    [titleFontSize]="'2em'"
-    [titleFontWeight]="'2px'"
-    [showUnits]="false"
-    [showSubtitle]="false"
-    [outerStrokeGradient]="true"
-    [outerStrokeGradientStopColor]="'#1378FA'"
-></circle-progress>
-  </div>
-  <div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="70"
-    [radius]="100"
-    [outerStrokeWidth]="10"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#03C6E9'"
-    [innerStrokeColor]="'#A7EEFB'"
-    [animation]="true"
-    [animationDuration]="1200"
-    [title]="'NODE'"
-    [titleFontSize]="'2em'"
-    [titleFontWeight]="'2px'"
-    [showUnits]="false"
-    [showSubtitle]="false"
-    [outerStrokeGradient]="true"
-    [outerStrokeGradientStopColor]="'#1378FA'"
-></circle-progress>
-  </div>
+    <td *ngIf="isLogged">
+      <button type="button" class="btn btn-sucess" routerLink="/editskill /{{skill.id}}"><i class="bi bi-pen"></i>Editar</button>
+    </td>
+      
+    <td *ngIf="isLogged">
+      <button type="button" class="btn btn-danger" (click)="delete(skill.id)"><i class="bi bi-eraser"></i>Borrar</button>
+    </td>
 
+  </div>
 </div>
+  
