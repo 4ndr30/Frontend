@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "frontendap4ndr30"
+  },
+  "targets": {
+    "frontendap4ndr30": {
+      "hosting": {
+        "portfolioFront": [
+          "frontendap4ndr30"
+        ]
+      }
+    }
   }
 }
